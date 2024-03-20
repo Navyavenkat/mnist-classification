@@ -11,7 +11,7 @@ To Develop a convolutional deep neural network (CNN) to classify hand-written di
 The MNIST dataset stands as a cornerstone in both machine learning and computer vision, offering a standardized benchmark for evaluating models. Comprising 28x28 pixel grayscale images depicting handwritten digits from 0 to 9, it includes a meticulously divided training set of 60,000 images and a test set of 10,000 images. Each image's grayscale representation spans pixel values from 0 to 255, where 0 signifies black and 255 denotes white. Researchers and practitioners extensively utilize this dataset to train and assess a multitude of machine learning models, particularly focusing on digit recognition tasks. Leveraging MNIST, we aim to develop and scrutinize a convolutional deep neural network tailored specifically for digit classification while also assessing its adaptability and generalization capabilities through real-world scanned handwritten images not present in the dataset.
 ## Neural Network Model
 
-
+![n5](n6.JPG)
 
 ## DESIGN STEPS
 
@@ -90,11 +90,14 @@ metrics.head()
 metrics[['accuracy','val_accuracy']].plot()
 metrics[['loss','val_loss']].plot()
 x_test_predictions = np.argmax(model.predict(X_test_scaled), axis=1)
+print("NAVYA-212221230069")
 print(confusion_matrix(y_test,x_test_predictions))
+print("NAVYA-212221230069")
 print(classification_report(y_test,x_test_predictions))
-img = image.load_img('sem.jpg')
+img = image.load_img('n3.jpeg')
 type(img)
-img = image.load_img('sem.jpg')
+print("NAVYA-212221230069")
+img = image.load_img('n3.jpeg')
 img_tensor = tf.convert_to_tensor(np.asarray(img))
 img_28 = tf.image.resize(img_tensor,(28,28))
 img_28_gray = tf.image.rgb_to_grayscale(img_28)
@@ -105,7 +108,7 @@ x_single_prediction = np.argmax(
 print(x_single_prediction)
 plt.imshow(img_28_gray_scaled.reshape(28,28),cmap='gray')
 
-img1 = image.load_img('img9.png')
+img1 = image.load_img('n3.jpeg')
 img_tensor1 = tf.convert_to_tensor(np.asarray(img1))
 img_28_gray1 = tf.image.resize(img_tensor1,(28,28))
 img_28_gray1 = tf.image.rgb_to_grayscale(img_28_gray1)
@@ -115,6 +118,7 @@ img_28_gray_inverted_scaled1 = img_28_gray_inverted1.numpy()/255.0
 x_single_prediction1 = np.argmax(
     model.predict(img_28_gray_inverted_scaled1.reshape(1,28,28,1)),
      axis=1)
+print("NAVYA-212221230069")
 print(x_single_prediction1)
 ```
 
@@ -135,9 +139,10 @@ print(x_single_prediction1)
 
 
 ### New Sample Data Prediction
-![e6](https://github.com/Navyavenkat/mnist-classification/assets/94165327/8d2063eb-b28f-4f4c-be33-51084fe095f9)
 
-![e7](https://github.com/Navyavenkat/mnist-classification/assets/94165327/7611e621-d526-4b67-891c-a4bfbf43d054)
+![n3](n3.jpeg)
+![n4](n4.JPG)
 
+![n5](n5.JPG)
 ## RESULT
 A convolutional deep neural network for digit classification and to verify the response for scanned handwritten images is developed successfully.
